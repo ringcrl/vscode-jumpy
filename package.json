@@ -1,11 +1,11 @@
 {
     "name": "vscode-jumpy",
-    "displayName": "jumpy",
+    "displayName": "jump-chenng",
     "description": "Jumpy provides fast cursor movement, inspired by Atom's package of the same name.",
     "icon": "images/jumpy-icon.png",
     "license": "MIT",
-    "version": "0.3.1",
-    "publisher": "wmaurer",
+    "version": "0.3.2",
+    "publisher": "chenng",
     "engines": {
         "vscode": "^1.24.0"
     },
@@ -24,12 +24,8 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/wmaurer/vscode-jumpy.git"
+        "url": "https://github.com/ringcrl/vscode-jumpy.git"
     },
-    "bugs": {
-        "url": "https://github.com/wmaurer/vscode-jumpy/issues"
-    },
-    "homepage": "https://github.com/wmaurer/vscode-jumpy/blob/master/README.md",
     "activationEvents": [
         "onCommand:extension.jumpy-word",
         "onCommand:extension.jumpy-line",
@@ -49,6 +45,18 @@
             {
                 "command": "extension.jumpy-exit",
                 "title": "Exit Jumpy Mode"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "Escape",
+                "command": "extension.jumpy-exit",
+                "when": "editorTextFocus && jumpy.isJumpyMode"
+            },
+            {
+                "key": "shift+enter",
+                "command": "extension.jumpy-word",
+                "when": "editorTextFocus"
             }
         ],
         "configuration": {
@@ -72,7 +80,7 @@
                 },
                 "jumpy.fontSize": {
                     "type": "number",
-                    "default": 0,
+                    "default": 16,
                     "description": "Font size used in Jumpy decorations, defaults to font size from settings"
                 },
                 "jumpy.darkThemeBackground": {
@@ -87,12 +95,12 @@
                 },
                 "jumpy.lightThemeBackground": {
                     "type": "string",
-                    "default": "black",
+                    "default": "yellow",
                     "description": "Background of Jumpy decoration in light themes"
                 },
                 "jumpy.lightThemeForeground": {
                     "type": "string",
-                    "default": "white",
+                    "default": "black",
                     "description": "Text color of Jumpy decoration in light themes"
                 }
             }

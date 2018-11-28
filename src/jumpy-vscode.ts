@@ -94,13 +94,14 @@ export function createDecorationOptions(
 
 function getSvgDataUri(code: string, dec: Decoration) {
     const width = dec.fontSize + 6;
+    const heigh = dec.fontSize + 3;
 
     // prettier-ignore
-    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${dec.fontSize}" height="${dec.fontSize}" width="${width}">`;
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width + 8} ${heigh}" height="${heigh}" width="${width + 5}">`;
     // prettier-ignore
-    svg += `<rect width="${width}" height="${dec.fontSize}" rx="2" ry="2" style="fill: ${dec.bgColor};"></rect>`;
+    svg += `<rect width="${width + 8}" height="${heigh}" rx="2" ry="2" style="fill: ${dec.bgColor};"></rect>`;
     // prettier-ignore
-    svg += `<text font-family="${dec.fontFamily}" font-size="${dec.fontSize}px" textLength="${width - 2}" textAdjust="spacing" fill="${dec.fgColor}" x="1" y="${dec.fontSize - 2}" alignment-baseline="baseline">`;
+    svg += `<text font-family="${dec.fontFamily}" font-size="${dec.fontSize}px" textLength="${width - 2}" textAdjust="spacing" fill="${dec.fgColor}" x="4" y="${dec.fontSize - 2}" alignment-baseline="baseline">`;
     svg += code;
     svg += `</text></svg>`;
 
