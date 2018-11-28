@@ -101,7 +101,7 @@ function getSvgDataUri(code: string, dec: Decoration) {
     // prettier-ignore
     svg += `<rect width="${width + 8}" height="${heigh}" rx="2" ry="2" style="fill: ${dec.bgColor};"></rect>`;
     // prettier-ignore
-    svg += `<text font-family="${dec.fontFamily}" font-size="${dec.fontSize}px" textLength="${width - 2}" textAdjust="spacing" fill="${dec.fgColor}" x="4" y="${dec.fontSize - 2}" alignment-baseline="baseline">`;
+    svg += `<text font-family="${dec.fontFamily}" font-size="${dec.fontSize}px" textLength="${width - 2}" textAdjust="spacing" fill="${dec.fgColor}" x="6" y="${dec.fontSize - 2}" alignment-baseline="baseline">`;
     svg += code;
     svg += `</text></svg>`;
 
